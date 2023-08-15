@@ -29,8 +29,8 @@ app.get('/numbers', async (req, res) => {
         const uniqueSortedNumbers = Array.from(new Set(results)).sort((a, b) => a - b);
 
         return res.json({ numbers: uniqueSortedNumbers });
-    } catch (error) {
-        console.error('Error processing URLs:', error.message);
+    } catch (err) {
+        console.error('Error processing URLs:', err.message);
         return res.status(500).json({ error: 'Error processing URLs' });
     }
 });
